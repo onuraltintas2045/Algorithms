@@ -71,3 +71,10 @@ checkPrint("Win, hasPickedUpAllSeeds: true, powerUpActive: false, touchingEagle:
 checkPrint("Win, hasPickedUpAllSeeds: false, powerUpActive: true, touchingEagle: true", win(hasPickedUpAllSeeds: false, powerUpActive: true, touchingEagle: true), expected: false)
 checkPrint("Win, hasPickedUpAllSeeds: false, powerUpActive: false, touchingEagle: true", win(hasPickedUpAllSeeds: false, powerUpActive: false, touchingEagle: true), expected: false)
 
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 3: Freelancer Rates
+
+// Solution
+
+print("Algorithm 3: Freelancer Rates \n")
