@@ -78,3 +78,24 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 3: Freelancer Rates \n")
+
+
+func dailyRateFrom(hourlyRate: Int) -> Double {
+    return 8.0 * Double(hourlyRate)
+}
+
+func monthlyRateFrom(hourlyRate: Int, withDiscount discount: Double) -> Double {
+    let monthlyRate = 22.0 * (8.0 * Double(hourlyRate))
+    return (monthlyRate - ((monthlyRate * discount)/100)).rounded()
+}
+
+func workdaysIn(budget: Double, hourlyRate: Int, withDiscount discount: Double) -> Double {
+    let dailyRate = dailyRateFrom(hourlyRate: hourlyRate)
+    let dailyRateWithDiscount = dailyRate - (dailyRate * discount)/100
+    return (budget / dailyRateWithDiscount).rounded(.down)
+}
+
+checkPrint("DailyRate for hourlyRate: 80", dailyRateFrom(hourlyRate: 80), expected: 640.0)
+checkPrint("MonthlyRate for hourlyRate: 77, discount: 10.5", monthlyRateFrom(hourlyRate: 77, withDiscount: 10.5), expected: 12129)
+checkPrint("WorkDaysIn for budget: 20000, hourlyRate: 80, discount: 11", workdaysIn(budget: 20000, hourlyRate: 80, withDiscount: 11), expected: 35)
+
