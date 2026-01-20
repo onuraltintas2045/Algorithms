@@ -99,3 +99,10 @@ checkPrint("DailyRate for hourlyRate: 80", dailyRateFrom(hourlyRate: 80), expect
 checkPrint("MonthlyRate for hourlyRate: 77, discount: 10.5", monthlyRateFrom(hourlyRate: 77, withDiscount: 10.5), expected: 12129)
 checkPrint("WorkDaysIn for budget: 20000, hourlyRate: 80, discount: 11", workdaysIn(budget: 20000, hourlyRate: 80, withDiscount: 11), expected: 35)
 
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 4: Cal's Custom Sign Shop
+
+// Solution
+
+print("Algorithm 4: Cal's Custom Sign Shop \n")
