@@ -125,3 +125,8 @@ func graduationFor(name: String, year: Int) -> String {
 func costOf(sign: String) -> Int {
     return 20 + (sign.count * 2)
 }
+
+checkPrint("Birthday, Onur", buildSign(for: "Birthday", name: "Onur"), expected: "Happy Birthday Onur!")
+checkPrint("Graduation for name: Onur, year: 2023", graduationFor(name: "Onur", year: 2023), expected: "Congratulations Onur!\nClass of 2023")
+checkPrint("costOf, Happy Birthday Onur!", costOf(sign: "Happy Birthday Onur!"), expected: 60)
+
