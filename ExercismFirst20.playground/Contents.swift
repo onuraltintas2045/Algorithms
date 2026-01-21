@@ -130,3 +130,10 @@ checkPrint("Birthday, Onur", buildSign(for: "Birthday", name: "Onur"), expected:
 checkPrint("Graduation for name: Onur, year: 2023", graduationFor(name: "Onur", year: 2023), expected: "Congratulations Onur!\nClass of 2023")
 checkPrint("costOf, Happy Birthday Onur!", costOf(sign: "Happy Birthday Onur!"), expected: 60)
 
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 5: Secret Agent Double-Null0111
+
+// Solution
+
+print("Algorithm 5: Secret Agent Double-Null0111 \n")
