@@ -159,3 +159,13 @@ func generateCombination(forRoom room: Int, usingFunction f: (Int) -> Int) -> (I
 let secretKey = protectSecret("Kilit açıldı.", withPassword: "Onur")
 checkPrint("Yanlış şifre.", secretKey("yanlisSifre"), expected: "Sorry. No hidden secrets here.")
 checkPrint("Doğru şifre", secretKey("Onur"), expected: "Kilit açıldı.")
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 6: Vexing Vehicle Purchase
+
+// Solution
+
+print("Algorithm 6: Vexing Vehicle Purchase \n")
+
