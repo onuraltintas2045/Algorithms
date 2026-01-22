@@ -137,3 +137,25 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 5: Secret Agent Double-Null0111 \n")
+
+func protectSecret(_ secret: String, withPassword password: String) -> (String) -> String {
+    return { inputPass in
+        if inputPass == password {
+            return secret
+        } else {
+            return "Sorry. No hidden secrets here."
+        }
+    }
+}
+
+func generateCombination(forRoom room: Int, usingFunction f: (Int) -> Int) -> (Int, Int, Int) {
+    let x = f(room)
+    let y = f(x)
+    let z = f(y)
+    
+    return (x, y, z)
+}
+
+let secretKey = protectSecret("Kilit açıldı.", withPassword: "Onur")
+checkPrint("Yanlış şifre.", secretKey("yanlisSifre"), expected: "Sorry. No hidden secrets here.")
+checkPrint("Doğru şifre", secretKey("Onur"), expected: "Kilit açıldı.")
