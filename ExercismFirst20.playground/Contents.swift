@@ -160,6 +160,26 @@ let secretKey = protectSecret("Kilit açıldı.", withPassword: "Onur")
 checkPrint("Yanlış şifre.", secretKey("yanlisSifre"), expected: "Sorry. No hidden secrets here.")
 checkPrint("Doğru şifre", secretKey("Onur"), expected: "Kilit açıldı.")
 
+// Some Closure Examp
+
+func makeAdder(_ a: Int) -> (Int) -> Int {
+    return { b in
+        return a + b
+    }
+}
+
+let addFive = makeAdder(5)
+addFive(3) // 8
+
+func makeThresholdChecker(_ limit: Int) -> (Int) -> Bool {
+    return { value in
+        return value >= limit
+    }
+}
+
+let isEnough = makeThresholdChecker(10)
+isEnough(8)   // false
+isEnough(12)  // true
 
 print("\n--------------------------------------------------------\n")
 
