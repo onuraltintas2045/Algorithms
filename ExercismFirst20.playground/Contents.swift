@@ -223,3 +223,21 @@ func calculateResellPrice(originalPrice: Int, yearsOld: Int) -> Int {
         return (originalPrice * 70) / 100
     }
 }
+
+checkPrint("Can buy", canIBuy(vehicle: "2025 Tesla Model S", price: 516.32, monthlyBudget: 100.00), expected: "Yes! I'm getting a 2025 Tesla Model S")
+checkPrint("Can't buy < %10 ", canIBuy(vehicle: "2025 Tesla Model X", price: 12500, monthlyBudget: 200.00), expected: "I'll have to be frugal if I want a 2025 Tesla Model X")
+checkPrint("Can't buy > %10", canIBuy(vehicle: "Mercedes AMG GT 63S", price: 2_250_880.00, monthlyBudget: 10000.00), expected: "Darn! No Mercedes AMG GT 63S for me")
+
+print("\n")
+
+checkPrint("License Type 2,3", licenseType(numberOfWheels: 2), expected: "You will need a motorcycle license for your vehicle")
+checkPrint("License Type 4,6", licenseType(numberOfWheels: 6), expected: "You will need an automobile license for your vehicle")
+checkPrint("License Type 18", licenseType(numberOfWheels: 18), expected: "You will need a commercial trucking license for your vehicle")
+checkPrint("License Type any number", licenseType(numberOfWheels: -21), expected: "We do not issue licenses for those types of vehicles")
+
+print("\n")
+
+checkPrint("ResellPrice < 3 years old", calculateResellPrice(originalPrice: 1000, yearsOld: 2), expected: 800)
+checkPrint("ResellPrice >= 10 years old", calculateResellPrice(originalPrice: 1000, yearsOld: 11), expected: 500)
+checkPrint("ResellPrice 2 < x < 10 years old", calculateResellPrice(originalPrice: 1000, yearsOld: 5), expected: 700)
+
