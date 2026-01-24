@@ -241,3 +241,10 @@ checkPrint("ResellPrice < 3 years old", calculateResellPrice(originalPrice: 1000
 checkPrint("ResellPrice >= 10 years old", calculateResellPrice(originalPrice: 1000, yearsOld: 11), expected: 500)
 checkPrint("ResellPrice 2 < x < 10 years old", calculateResellPrice(originalPrice: 1000, yearsOld: 5), expected: 700)
 
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 7: Magician-in-Training
+
+// Solution
+
+print("Algorithm 7: Magician-in-Training \n")
