@@ -284,3 +284,11 @@ func insert(_ newCard: Int, at index: Int, from stack: [Int]) -> [Int] {
 func checkSizeOfStack(_ stack: [Int], _ size: Int) -> Bool {
     stack.count == size
 }
+
+checkPrint("Get Card [1,2,3,4], index: 2", getCard(at: 2, from: [1,2,3,4]), expected: 3)
+checkPrint("SetCard at 0, [1,2,3,4], newCard: 5", setCard(at: 0, in: [1,2,3,4], to: 5), expected: [5,2,3,4])
+checkPrint("Insert at top 5, [1,2,3,4]", insert(5, atTopOf: [1,2,3,4]), expected: [1,2,3,4,5])
+checkPrint("removeCard at 1, [1,0,2,3,4]", removeCard(at: 1, from: [1,0,2,3,4]), expected: [1,2,3,4])
+checkPrint("Insert at 1, [1,3,4,5], number: 2", insert(2, at: 1, from: [1,3,4,5]), expected: [1,2,3,4,5])
+checkPrint("check size of Stack [1,2,3,4]", checkSizeOfStack([1,2,3,4], 4), expected: true)
+checkPrint("check size of Stack [1,2,3,4]", checkSizeOfStack([1,2,3,4], 1), expected: false)
