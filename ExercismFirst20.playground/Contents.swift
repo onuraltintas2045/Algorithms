@@ -333,3 +333,10 @@ let board = [
 checkPrint("GetRow: 1", getRow(board, rank: 1), expected: ["1A", "1B", "1C", "1D", "1E", "1F", "1G", "1H"])
 checkPrint("GetRow: 3", getRow(board, rank: 3), expected: ["3A", "3B", "3C", "3D", "3E", "3F", "3G", "3H"])
 
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 9: Bird Watcher
+
+// Solution
+
+print("Algorithm 9: Bird Watcher \n")
