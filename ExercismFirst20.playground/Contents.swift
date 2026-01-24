@@ -292,3 +292,11 @@ checkPrint("removeCard at 1, [1,0,2,3,4]", removeCard(at: 1, from: [1,0,2,3,4]),
 checkPrint("Insert at 1, [1,3,4,5], number: 2", insert(2, at: 1, from: [1,3,4,5]), expected: [1,2,3,4,5])
 checkPrint("check size of Stack [1,2,3,4]", checkSizeOfStack([1,2,3,4], 4), expected: true)
 checkPrint("check size of Stack [1,2,3,4]", checkSizeOfStack([1,2,3,4], 1), expected: false)
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 8: ChessBoard
+
+// Solution
+
+print("Algorithm 8: ChessBoard \n")
