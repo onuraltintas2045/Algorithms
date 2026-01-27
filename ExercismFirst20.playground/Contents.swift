@@ -377,3 +377,11 @@ let fixBirdCount = [2, 5, 0, 7, 4, 1]
 checkPrint("birdsPerDay = [2, 5, 0, 7, 4, 1, 3, 0, 2, 5, 0, 1, 3, 1]", totalBirdCount(birdsPerDay), expected: 34)
 checkPrint("birdsInWeek, birdsPerDay, week: 2", birdsInWeek(birdsPerDay, weekNumber: 2), expected: 12)
 checkPrint("fixBirds: [2, 5, 0, 7, 4, 1] ", fixBirdCountLog(fixBirdCount), expected: [3, 5, 1, 7, 5, 1])
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 10: Santa's Swifty Helper
+
+// Solution
+
+print("Algorithm 10: Santa's Swifty Helper \n")
