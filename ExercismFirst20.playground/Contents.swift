@@ -340,3 +340,33 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 9: Bird Watcher \n")
+
+func totalBirdCount(_ birdsPerDay: [Int]) -> Int {
+    var total = 0
+    for i in 0..<birdsPerDay.count {
+        total += birdsPerDay[i]
+    }
+    return total
+}
+
+func birdsInWeek(_ birdsPerDay: [Int], weekNumber: Int) -> Int {
+    var totalInWeek = 0
+    let startDayOfWeek = (weekNumber - 1) * 7
+    let endDayOfWeek = startDayOfWeek + 7
+    
+    for i in startDayOfWeek..<endDayOfWeek {
+        totalInWeek += birdsPerDay[i]
+    }
+    
+    return totalInWeek
+}
+
+func fixBirdCountLog(_ birdsPerDay: [Int]) -> [Int] {
+    var fixedBirdsCount = birdsPerDay
+    
+    for i in stride(from: 0, to: birdsPerDay.count, by: 2) {
+        fixedBirdsCount[i] = fixedBirdsCount[i] + 1
+    }
+    
+    return fixedBirdsCount
+}
