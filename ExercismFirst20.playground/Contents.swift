@@ -415,3 +415,14 @@ func addCategory(_ items: [(name: String, amount: Int)], category: String) -> [(
     
     return result
 }
+
+let toy = (name: "Doll", amount: 10)
+checkPrint("GetName: Doll", getName(toy), expected: "Doll")
+
+print(createToy(name: "Doll", amount: 20))
+
+let toys = [(name: "Doll", amount: 10), (name: "Car", amount: 5), (name: "Train", amount: 3)]
+print(updateQuantity(toys, toy: "Doll", amount: 20))
+
+let categoryToys = [(name: "Car", amount: 5), (name: "Train", amount: 3)]
+print(addCategory(categoryToys, category: "Vehicle"))
