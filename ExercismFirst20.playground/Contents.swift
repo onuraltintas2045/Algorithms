@@ -426,3 +426,12 @@ print(updateQuantity(toys, toy: "Doll", amount: 20))
 
 let categoryToys = [(name: "Car", amount: 5), (name: "Train", amount: 3)]
 print(addCategory(categoryToys, category: "Vehicle"))
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 11: Slice Sizing
+
+// Solution
+
+print("Algorithm 11: Slice Sizing \n")
