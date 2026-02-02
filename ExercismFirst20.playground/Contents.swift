@@ -488,3 +488,12 @@ checkPrint("BiggestSlice dA: 10, sA: 6, dB: 14, sB: 16", biggestSlice(diameterA:
 checkPrint("BiggestSlice dA: 10, sA: 6, dB: 12, sB: 8", biggestSlice(diameterA: "10", slicesA: "6", diameterB: "12", slicesB: "8"), expected: "Slice B is bigger")
 checkPrint("BiggestSlice dA: Pepperoni, sA: 6, dB: Sausage, sB: 8", biggestSlice(diameterA: "Pepperoni", slicesA: "6", diameterB: "Sausage", slicesB: "8"), expected: "Neither slice is bigger")
 
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 12: Expert Mixologist
+
+// Solution
+
+print("Algorithm 12: Expert Mixologist \n")
