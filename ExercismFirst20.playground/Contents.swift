@@ -447,7 +447,7 @@ func sliceSize(diameter: Double?, slices: Int?) -> Double? {
     let area = Double.pi * radius * radius
     
     let sliceSize = area/Double(slices)
-    return sliceSize
+    return sliceSize.rounded()
 }
 
 func biggestSlice(
@@ -480,3 +480,11 @@ func biggestSlice(
     
     return "Neither slice is bigger"
 }
+
+checkPrint("SliceSize diameter: 16, slices: 12", sliceSize(diameter: 16, slices: 12), expected: 16.75516081914556.rounded())
+checkPrint("SliceSize diameter: nil, slices: 12", sliceSize(diameter: nil, slices: 12), expected: nil)
+
+checkPrint("BiggestSlice dA: 10, sA: 6, dB: 14, sB: 16", biggestSlice(diameterA: "10", slicesA: "6", diameterB: "14", slicesB: "16"), expected: "Slice A is bigger")
+checkPrint("BiggestSlice dA: 10, sA: 6, dB: 12, sB: 8", biggestSlice(diameterA: "10", slicesA: "6", diameterB: "12", slicesB: "8"), expected: "Slice B is bigger")
+checkPrint("BiggestSlice dA: Pepperoni, sA: 6, dB: Sausage, sB: 8", biggestSlice(diameterA: "Pepperoni", slicesA: "6", diameterB: "Sausage", slicesB: "8"), expected: "Neither slice is bigger")
+
