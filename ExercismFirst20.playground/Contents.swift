@@ -435,3 +435,48 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 11: Slice Sizing \n")
+
+
+func sliceSize(diameter: Double?, slices: Int?) -> Double? {
+    guard let diameter = diameter,
+          let slices = slices,
+          diameter >= 0,
+          slices >= 1 else { return nil}
+    
+    let radius = diameter/2
+    let area = Double.pi * radius * radius
+    
+    let sliceSize = area/Double(slices)
+    return sliceSize
+}
+
+func biggestSlice(
+    diameterA: String, slicesA: String,
+    diameterB: String, slicesB: String
+) -> String {
+    let diameterADouble = Double(diameterA)
+    let sliceADouble = Int(slicesA)
+    let diameterBDouble = Double(diameterB)
+    let sliceBDouble = Int(slicesB)
+    
+    let sliceSizeA = sliceSize(diameter: diameterADouble, slices: sliceADouble)
+    let sliceSizeB = sliceSize(diameter: diameterBDouble, slices: sliceBDouble)
+    
+    if sliceSizeA == nil && sliceSizeB != nil {
+        return "Slice B is bigger"
+    }
+    
+    if sliceSizeA != nil && sliceSizeB == nil {
+        return "Slice A is bigger"
+    }
+    
+    if let a = sliceSizeA, let b = sliceSizeB {
+        if a > b {
+            return "Slice A is bigger"
+        } else if b > a {
+            return "Slice B is bigger"
+        }
+    }
+    
+    return "Neither slice is bigger"
+}
