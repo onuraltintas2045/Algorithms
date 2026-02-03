@@ -497,3 +497,83 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 12: Expert Mixologist \n")
+
+func timeToPrepare(drinks: [String]) -> Double {
+    var totalTime: Double = 0
+    for drink in drinks {
+        switch drink {
+            case "beer", "soda", "water":
+                totalTime += 0.5
+            case "shot":
+                totalTime += 1.0
+            case "mixed drink":
+                totalTime += 1.5
+            case "fancy drink":
+                totalTime += 2.5
+            case "frozen drink":
+                totalTime += 3.0
+            default:
+                totalTime += 0.0
+        }
+    }
+    return totalTime
+}
+
+func makeWedges(needed: Int, limes: [String]) -> Int {
+    var wedgesCut = 0
+    var limesUsed = 0
+    
+    while wedgesCut < needed && limesUsed < limes.count {
+        let currentLime = limes[limesUsed]
+        
+        switch currentLime {
+            case "small":
+                wedgesCut += 6
+            case "medium":
+                wedgesCut += 8
+            case "large":
+                wedgesCut += 10
+            default:
+                break
+        }
+        
+        limesUsed += 1
+    }
+    
+    return limesUsed
+}
+
+func finishShift(minutesLeft: Int, remainingOrders: [[String]]) -> [[String]] {
+    var time = Double(minutesLeft)
+    var orders = remainingOrders
+    
+    while time > 0 && !orders.isEmpty {
+        let firstOrder = orders[0]
+        let preparationTime = timeToPrepare(drinks: firstOrder)
+        
+        time -= preparationTime
+        orders.removeFirst()
+    }
+    
+    return orders
+}
+
+func orderTracker(orders: [(drink: String, time: String)]) -> (
+    beer: (first: String, last: String, total: Int)?, soda: (first: String, last: String, total: Int)?
+) {
+    var beerOrders: [String] = []
+    var sodaOrders: [String] = []
+    
+    for order in orders {
+        if order.drink == "beer" {
+            beerOrders.append(order.time)
+        } else if order.drink == "soda" {
+            sodaOrders.append(order.time)
+        }
+    }
+    
+    let beerResult = beerOrders.isEmpty ? nil : (first: beerOrders.first!, last: beerOrders.last!, total: beerOrders.count)
+    let sodaResult = sodaOrders.isEmpty ? nil : (first: sodaOrders.first!, last: sodaOrders.last!, total: sodaOrders.count)
+    
+    return (beer: beerResult, soda: sodaResult)
+}
