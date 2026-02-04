@@ -593,3 +593,12 @@ let orders = [
 ]
 
 print(orderTracker(orders: orders))
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 13: Double-Null0111: Closures Are Forever
+
+// Solution
+
+print("Algorithm 13: Double-Null0111: Closures Are Forever \n")
