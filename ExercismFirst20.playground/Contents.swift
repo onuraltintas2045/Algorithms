@@ -577,3 +577,19 @@ func orderTracker(orders: [(drink: String, time: String)]) -> (
     
     return (beer: beerResult, soda: sodaResult)
 }
+
+checkPrint("beer, frozen drink, shot", timeToPrepare(drinks: ["beer", "frozen drink", "shot"]), expected: 4.5)
+checkPrint("makeWedges = needed: 25, limes: small, small, large, medium, small)", makeWedges(needed: 25, limes: ["small", "small", "large", "medium", "small"]), expected: 4)
+
+let remainingOrders = [["beer", "frozen drink", "shot"], ["fancy drink", "soda"], ["beer", "beer", "water"], ["mixed drink", "frozen drink"]]
+checkPrint("remainingorder = minutesLeft: 5, orders: remainingOrders", finishShift(minutesLeft: 5, remainingOrders: remainingOrders), expected: [["beer", "beer", "water"], ["mixed drink", "frozen drink"]])
+
+let orders = [
+    (drink: "beer", time: "10:01"), (drink: "frozen drink", time: "10:02"),
+    (drink: "shot", time: "10:05"), (drink: "fancy drink", time: "10:06"),
+    (drink: "soda", time: "10:09"), (drink: "beer", time: "10:15"), (drink: "beer", time: "10:22"),
+    (drink: "water", time: "10:26"), (drink: "mixed drink", time: "10:28"),
+    (drink: "frozen drink", time: "10:33"),
+]
+
+print(orderTracker(orders: orders))
