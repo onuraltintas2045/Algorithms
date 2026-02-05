@@ -640,3 +640,12 @@ print(rotate(strings))
 
 let shuffler = makeShuffle(flipper: flip, rotator: rotate)
 print(shuffler([1, 0, 0, 1, 1, 0, 1, 1], ("red", "yellow", "blue")))
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 14: High Score Board
+
+// Solution
+
+print("Algorithm 14: High Score Board \n")
