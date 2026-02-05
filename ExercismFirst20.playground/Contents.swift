@@ -602,3 +602,34 @@ print("\n--------------------------------------------------------\n")
 // Solution
 
 print("Algorithm 13: Double-Null0111: Closures Are Forever \n")
+
+typealias ChangeClosure = @Sendable ((String, String, String)) -> (String, String, String)
+
+let flip: ChangeClosure = { strings in
+    return (strings.1, strings.0,strings.2)
+}
+
+let rotate: ChangeClosure = { strings in
+    return (strings.1, strings.2, strings.0)
+}
+
+
+func makeShuffle(
+    flipper: @escaping ((String, String, String)) -> (String, String, String),
+    rotator: @escaping ((String, String, String)) -> (String, String, String)
+) -> ([UInt8], (String, String, String)) -> (String, String, String) {
+    return { idBits, wires in
+        var currentWires = wires
+        
+        for bit in idBits.reversed() {
+            if bit == 0 {
+                currentWires = flipper(currentWires)
+            } else {
+                currentWires = rotator(currentWires)
+            }
+        }
+        
+        return currentWires
+    }
+}
+
