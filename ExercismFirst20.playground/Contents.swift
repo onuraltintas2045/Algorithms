@@ -633,3 +633,10 @@ func makeShuffle(
     }
 }
 
+let strings = ("A", "B", "C")
+print(flip(strings))
+
+print(rotate(strings))
+
+let shuffler = makeShuffle(flipper: flip, rotator: rotate)
+print(shuffler([1, 0, 0, 1, 1, 0, 1, 1], ("red", "yellow", "blue")))
