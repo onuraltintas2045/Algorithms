@@ -681,3 +681,26 @@ func orderByPlayers(_ scores: [String: Int]) -> [(String, Int)] {
 func orderByScores(_ scores: [String: Int]) -> [(String, Int)] {
     return scores.sorted { $0.value > $1.value }
 }
+
+checkPrint("New Dictionary", newScoreBoard(), expected: [:])
+
+var highScores = newScoreBoard()
+addPlayer(&highScores, "David")
+addPlayer(&highScores, "John", 20)
+print(highScores)
+
+removePlayer(&highScores, "David")
+print(highScores)
+
+addPlayer(&highScores, "Alba", 10)
+addPlayer(&highScores, "Leonardo", 20)
+
+
+resetScore(&highScores, "John")
+print(highScores)
+
+updateScore(&highScores, "John", 100)
+print(highScores)
+
+print(orderByPlayers(highScores))
+print(orderByScores(highScores))
