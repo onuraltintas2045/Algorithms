@@ -704,3 +704,12 @@ print(highScores)
 
 print(orderByPlayers(highScores))
 print(orderByScores(highScores))
+
+
+print("\n--------------------------------------------------------\n")
+
+// Algorithm 15: The 1st Rule of Poetry Club
+
+// Solution
+
+print("Algorithm 15: The 1st Rule of Poetry Club \n")
